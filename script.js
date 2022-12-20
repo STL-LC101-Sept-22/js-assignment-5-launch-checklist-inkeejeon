@@ -26,18 +26,21 @@ let form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    let pilotInput = document.querySelector("input[name-pilotName]");
+    let pilotInput = document.querySelector("input[name=pilotName]");
     let pilot = pilotInput.value;
 
     let copilotInput = document.querySelector("input[name=copilotName]");
     let copilot = copilotInput.value;
 
     let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-    let fuelLevel = fuelLevelInput.value;
+    let fuelLevel = Number(fuelLevelInput.value);
 
-    let cargoLevelInput = document.querySelector("input[name=cargoMass]");
-    let cargoLevel = cargoLevelInput.value;
+    let cargoMassInput = document.querySelector("input[name=cargoMass]");
+    let cargoMass = Number(cargoMassInput.value);
 
-    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+    formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass);
 });
 })
+
+// dont need seperately validate input line 29 f+ C + submitbutton. (get elementID) 
+ 
